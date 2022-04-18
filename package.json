@@ -1,0 +1,19 @@
+{
+  "name": "seachkeyword",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "start": "nodemon --experimental-modules --es-module-specifier-resolution=node index.js"
+  },
+  "type": "module",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/rishabhjhs"
+  },
+  "author": "Rishabh",
+  "license": "ISC",
+  "dependencies": {
+    "nodemon": "^2.0.15"
+  }
+}
