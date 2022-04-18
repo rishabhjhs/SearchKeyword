@@ -8,11 +8,13 @@ class InputDataProcessor {
     #pages
     #pageCount
     #queries
+    #queryCount
 
     constructor() {
         this.#data = [];
         this.#pages = [];
         this.#pageCount = 1;
+        this.#queryCount = 1;
         this.#queries = [];
     }
 
@@ -37,17 +39,20 @@ class InputDataProcessor {
                 this.#pages.push(page);
                 this.#pageCount ++;
             } else {
-                const query = new Query(keywords)
+                const query = new Query(this.#queryCount, keywords)
                 this.#queries.push(query);
+                this.#queryCount ++;
             }
         });
     }
 
     getProcessedData() {
         this.#processData();
-        this.#queries.forEach((q) => {
+        this.#queries.forEach((q, ) => {
             const search = new Search(this.#pages, q);
-            console.log(search.getSearchResult());
+            const result = search.getSearchResult();
+            result.length > 0 ? console.log(`Q${q.getQueryNumber()}:`, result) :
+                console.log(`Q${q.getQueryNumber()}:`);
         });
     }
 }
