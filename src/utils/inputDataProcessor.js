@@ -46,6 +46,10 @@ class InputDataProcessor {
         });
     }
 
+    getData() {
+        return this.#data;
+    }
+
     getProcessedData() {
         this.#processData();
         this.#queries.forEach((q, ) => {
